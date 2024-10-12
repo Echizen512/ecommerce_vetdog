@@ -5,57 +5,55 @@ define('dbuser', 'root');
 define('dbpass', '');
 define('dbname', 'vetdog');
 
-    try {
-        $connect = new PDO("mysql:host=".dbhost."; dbname=".dbname, dbuser, dbpass);
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-    catch(PDOException $e) {
-        echo $e->getMessage();
-    }
+try {
+    $connect = new PDO("mysql:host=".dbhost."; dbname=".dbname, dbuser, dbpass);
+    $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    echo $e->getMessage();
+}
 
-    if(isset($_POST['login'])) {
+if (isset($_POST['login'])) {
     $errMsg = '';
 
     $correo = $_POST['correo'];
-    $contra = MD5($_POST['contra']);
-    if($correo == '')
+    $contra = $_POST['contra'];
+    
+    if ($correo == '')
         $errMsg = 'Digite su correo';
-    if($contra == '')
+    if ($contra == '')
         $errMsg = 'Digite su contraseña';
-    if($errMsg == '') {
+    
+    if ($errMsg == '') {
         try {
-        $stmt = $connect->prepare('SELECT id_due,nom_due,ape_due ,correo, correo,contra, cargo FROM owner WHERE correo = :correo');
-        $stmt->execute(array(
-        ':correo' => $correo
-        ));
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+            $stmt = $connect->prepare('SELECT id_due, nom_due, ape_due, correo, contra, cargo FROM owner WHERE correo = :correo');
+            $stmt->execute(array(':correo' => $correo));
+            $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if($data == false){
-        $errMsg = "User $correo no encontrado.";
-        }
-        else {
-            if($contra == $data['contra']) {
-            $_SESSION['id_due'] = $data['id_due'];
-            $_SESSION['nom_due'] = $data['nom_due'];
-            $_SESSION['ape_due'] = $data['ape_due'];
-            $_SESSION['correo'] = $data['correo'];
-            $_SESSION['contra'] = $data['contra'];
-            $_SESSION['cargo'] = $data['cargo'];        
-    if($_SESSION['cargo'] == 2){
-            header('Location: ../shop/shop');
-        }
-            exit;
-        }
-        else
-            $errMsg = 'Contraseña incorrecta.';
+            if ($data == false) {
+                $errMsg = "User $correo no encontrado.";
+            } else {
+                if (password_verify($contra, $data['contra'])) {
+                    $_SESSION['id_due'] = $data['id_due'];
+                    $_SESSION['nom_due'] = $data['nom_due'];
+                    $_SESSION['ape_due'] = $data['ape_due'];
+                    $_SESSION['correo'] = $data['correo'];
+                    $_SESSION['cargo'] = $data['cargo'];
+
+                    if ($_SESSION['cargo'] == 2) {
+                        header('Location: ../shop/shop');
+                    }
+                    exit;
+                } else {
+                    $errMsg = 'Contraseña incorrecta.';
+                }
+            }
+        } catch(PDOException $e) {
+            $errMsg = $e->getMessage();
         }
     }
-    catch(PDOException $e) {
-        $errMsg = $e->getMessage();
-    }
-}
 }
 ?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 <head>
@@ -108,7 +106,8 @@ define('dbname', 'vetdog');
                                         <input type="email" name="correo" value="<?php if(isset($_POST['correo'])) echo $_POST['correo'] ?>" placeholder="Correo electrónico" required />
                                     </div>
                                     <div class="single-input-item">
-                                        <input type="password" name="contra" value="<?php if(isset($_POST['contra'])) echo MD5($_POST['contra']) ?>" placeholder="Contraseña" required />
+                                    <input type="password" name="contra" placeholder="Contraseña" required />
+
                                     </div>
                                     <div class="single-input-item">
                                         <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
@@ -174,8 +173,8 @@ define('dbname', 'vetdog');
     <script src="../../assets/js/active.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
-<?php
-    if(isset($_POST["agregar"])){
+    <?php
+if (isset($_POST["agregar"])) {
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -185,53 +184,45 @@ define('dbname', 'vetdog');
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    } 
-    $nom_due=$_POST['nom_due'];
-    $ape_due=$_POST['ape_due'];
-    $correo=$_POST['correo'];
-    $contra=MD5($_POST['contra']);
-    $sql = "select * from owner where correo='$correo'";
+    }
+
+    $nom_due = $_POST['nom_due'];
+    $ape_due = $_POST['ape_due'];
+    $correo = $_POST['correo'];
+    $contra = password_hash($_POST['contra'], PASSWORD_BCRYPT);
+
+    $sql = "SELECT * FROM owner WHERE correo='$correo'";
     $result = mysqli_query($conn, $sql);
-?>
-    <?php
-    if(mysqli_num_rows($result)>0){
-        if($result){
-    ?>
+
+    if (mysqli_num_rows($result) > 0) {
+        ?>
         <script type="text/javascript">
-        swal("Oops...!", "Ya existe el correo a agregar!", "error")
+            swal("Oops...!", "Ya existe el correo a agregar!", "error")
         </script>
-    <?php
-    }
-}
-    else
-{
-    $sql2 = "insert into owner(nom_due,ape_due,correo,estado,contra,cargo) 
-    values ('$nom_due','$ape_due','$correo',1,'$contra',2)";
-    if (mysqli_query($conn, $sql2)) {
-        if($sql2){
-?>
-    <script type="text/javascript">
-    swal("¡Registrado!", "¡Registrado correctamente", "success").then(function() {
-                window.location = "login-register";
-            });
-    </script>
-
-    <?php
-    }
-    else{
-    ?>
-
-    <script type="text/javascript">
-        swal("Oops...!", "No se pudo guardar!", "error")
-    </script>
-<?php
-    }
+        <?php
+    } else {
+        $sql2 = "INSERT INTO owner (nom_due, ape_due, correo, estado, contra, cargo) 
+                 VALUES ('$nom_due','$ape_due','$correo',1,'$contra',2)";
+        if (mysqli_query($conn, $sql2)) {
+            ?>
+            <script type="text/javascript">
+                swal("¡Registrado!", "¡Registrado correctamente", "success").then(function() {
+                    window.location = "login-register";
+                });
+            </script>
+            <?php
         } else {
-            echo "Error: " . $sql2 . "" . mysqli_error($conn);
+            ?>
+            <script type="text/javascript">
+                swal("Oops...!", "No se pudo guardar!", "error")
+            </script>
+            <?php
+        }
     }
-    }
+
     $conn->close();
-    }
+}
 ?>
+
 </body>
 </html>

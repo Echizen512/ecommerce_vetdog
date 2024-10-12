@@ -197,7 +197,7 @@ border-radius: 4px;
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="welcome-message">
-                                <p>Bienvenidos a nuestra nueva web</p>
+                                <p>Bienvenidos</p>
                             </div>
                         </div>
 
@@ -622,7 +622,7 @@ border-radius: 4px;
                                 </div>
                                 <div class="contact-top-info">
                                     <p>Llámanos ahora</p>
-                                    <a href="#">+51 999999999</a>
+                                    <a href="#">0412-4773077</a>
                                 </div>
                             </div>
                         </div>
@@ -999,7 +999,7 @@ border-radius: 4px;
                     <div class="off-canvas-contact-widget">
                         <ul>
                             <li><i class="fa fa-mobile"></i>
-                                <a href="#">+51 999999999</a>
+                                <a href="#">0412-4773077</a>
                             </li>
                             <li><i class="fa fa-envelope-o"></i>
                                 <a href="#">vetdogg@gmail.com</a>

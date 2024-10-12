@@ -78,7 +78,7 @@ include '../Includes/Aside.php';
                             <ul>
                                 <li><i class="fa fa-fax"></i> Address : No 40 Baria Sreet 133/2 Peru</li>
                                 <li><i class="fa fa-phone"></i> vetdog@gmail.com</li>
-                                <li><i class="fa fa-envelope-o"></i> +51 999999999</li>
+                                <li><i class="fa fa-envelope-o"></i> 0412-4773077</li>
                             </ul>
                             <div class="working-time">
                                 <h3>Horas Laborales</h3>

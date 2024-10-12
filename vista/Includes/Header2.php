@@ -11,9 +11,9 @@
                         <div class="col-lg-6">
                             <div class="header-top-settings">
                                 <ul class="nav align-items-center">
-                                    <li class="account-settings">
+                                    <!--- <li class="account-settings">
                                         Mi cuenta
-                                        <i class="fa fa-angle-down"></i>
+                                        <i class="fa fa-angle-down"></i> -->
                                         <ul class="dropdown-list account-list">
                                             <li>
                                                 <a href="account/login-register">Iniciar Sesión</a>
@@ -337,9 +337,9 @@
                         <div class="mobile-header-top">
                             <div class="header-top-settings">
                                 <ul class="nav align-items-center justify-content-center">
-                                    <li class="account-settings">
+                                    <!--- <li class="account-settings">
                                         Mi cuenta
-                                        <i class="fa fa-angle-down"></i>
+                                        <i class="fa fa-angle-down"></i> -->
                                         <ul class="dropdown-list account-list">
                                             <li><a href="account/login-register">Iniciar Sesión/Registrarse</a></li>
                                         </ul>

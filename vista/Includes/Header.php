@@ -322,7 +322,7 @@
                                 </div>
                                 <div class="contact-top-info">
                                     <p>Llámanos ahora</p>
-                                    <a href="#">+51 999999999</a>
+                                    <a href="#">0412-4773077</a>
                                 </div>
                             </div>
                         </div>
@@ -338,9 +338,9 @@
                         <div class="mobile-header-top">
                             <div class="header-top-settings">
                                 <ul class="nav align-items-center justify-content-center">
-                                    <li class="account-settings">
+                                   <!--- <li class="account-settings">
                                         Mi cuenta
-                                        <i class="fa fa-angle-down"></i>
+                                        <i class="fa fa-angle-down"></i> -->
                                         <ul class="dropdown-list account-list">
                                             <li><a href="login-register">login register</a></li>
                                         </ul>

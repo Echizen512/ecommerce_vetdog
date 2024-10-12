@@ -45,7 +45,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="welcome-message">
-                                <p>Bienvenidos a nuestra nueva web</p>
+                                <p>Bienvenidos</p>
                             </div>
                         </div>
 
@@ -53,25 +53,17 @@
                             <div class="header-top-settings">
                                 <ul class="nav align-items-center">
                                     <li class="account-settings">
-                                       <?php echo ucfirst($_SESSION['correo']); ?>
+                                    <?php echo ucfirst($_SESSION['correo']); ?>
                                         <i class="fa fa-angle-down"></i>
                                         <ul class="dropdown-list account-list">
-                                           
-                                            <li><a href="my-account">mi cuenta</a></li>
-                                            <li><a href="../sales/sales.php">Ventas</a></li>
+                                            <!---<li><a href="my-account">mi cuenta</a></li> -->
+                                            <li><a href="../sales/sales.php">Compras</a></li>
                                             <li><a href="salir">cerrar sesion</li>
-
-                                              
-
-                                            
                                         </ul>
                                     </li>
-                                 
-
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -474,7 +466,7 @@
                                 </div>
                                 <div class="contact-top-info">
                                     <p>Llámanos ahora</p>
-                                    <a href="#">+51 999999999</a>
+                                    <a href="#">0412-4773077</a>
                                 </div>
                             </div>
                         </div>
@@ -853,7 +845,7 @@
                     <div class="off-canvas-contact-widget">
                         <ul>
                             <li><i class="fa fa-mobile"></i>
-                                <a href="#">+51 999999999</a>
+                                <a href="#">0412-4773077</a>
                             </li>
                             <li><i class="fa fa-envelope-o"></i>
                                 <a href="#">vetdogg@gmail.com</a>
