@@ -58,6 +58,7 @@
                                         <ul class="dropdown-list account-list">
                                            
                                             <li><a href="my-account">mi cuenta</a></li>
+                                            <li><a href="../sales/sales.php">Ventas</a></li>
                                             <li><a href="salir">cerrar sesion</li>
 
                                               
@@ -150,7 +151,7 @@
                             <div class="category-toggle-wrap">
                                 <div class="category-toggle">
                                     <i class="ion-android-menu"></i>
-                                    all categories
+                                    Categorías
                                     <span><i class="ion-android-arrow-dropdown"></i></span>
                                 </div>
 
@@ -501,8 +502,8 @@
                                            
                                           
                                             <li><a href="my-account">mi cuenta</a></li>
+                                            <li><a href="../sales/sales.php">Ventas</a></li>
                                             <li><a href="salir">cerrar sesion</li>
-                                          
                                         </ul>
                                     </li>
 
@@ -538,7 +539,7 @@
                         <div class="category-toggle-wrap">
                             <div class="category-toggle">
                                 <i class="ion-android-menu"></i>
-                                all categories
+                                Categorías
                                 <span><i class="ion-android-arrow-dropdown"></i></span>
                             </div>
                             
@@ -1001,7 +1002,7 @@
                                     <div class="feature-product-item">
                                         <div class="product-thumb">
                                             <a href="#">
-                                                <img src="../../assets/img/product/<?php echo $row['foto']; ?>" alt="">
+                                                <img src="../../../vetdog/assets/img/subidas/<?php echo $row['foto']; ?>" alt="">
                                             </a>
                                             <div class="add-to-links">
                                                 <a href="#" data-bs-toggle="tooltip" title="Añadir al carrito"><i class="ion-bag"></i></a>
@@ -1097,7 +1098,7 @@
                                     <div class="feature-product-item">
                                         <div class="product-thumb">
                                             <a href="#">
-                                                <img src="../../assets/img/product/<?php echo $row['foto']; ?>" alt="">
+                                                <img src="../../../vetdog/assets/img/subidas/<?php echo $row['foto']; ?>" alt="">
                                             </a>
                                             <div class="add-to-links">
                                                 <a href="#" data-bs-toggle="tooltip" title="Añadir al carrito"><i class="ion-bag"></i></a>
@@ -1192,7 +1193,7 @@
                                     <div class="feature-product-item">
                                         <div class="product-thumb">
                                             <a href="#">
-                                                <img src="../../assets/img/product/<?php echo $row['foto']; ?>" alt="">
+                                                <img src="../../../vetdog/assets/img/subidas/<?php echo $row['foto']; ?>" alt="">
                                             </a>
                                             <div class="add-to-links">
                                                 <a href="#" data-bs-toggle="tooltip" title="Añadir al carrito"><i class="ion-bag"></i></a>
@@ -1267,14 +1268,14 @@
                             <div class="banner-statistics">
                                 <div class="img-container">
                                     <a href="#">
-                                        <img src="../../assets/img/product/crockes.png" alt="">
+                                        <img src="../../../vetdog/assets/img/subidas/crockes.png" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="banner-statistics">
                                 <div class="img-container">
                                     <a href="#">
-                                        <img src="../../assets/img/product/cxxx.png" alt="">
+                                        <img src="../../../vetdog/assets/img/subidas/cxxx.png" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -1331,7 +1332,7 @@
                                             <div class="product-item">
                                                 <div class="product-thumb">
                                                     <a href="#">
-                                                        <img src="../../assets/img/product/<?php echo $row['foto']; ?>" alt="">
+                                                        <img src="../../../vetdog/assets/img/subidas/<?php echo $row['foto']; ?>" alt="">
                                                     </a>
                                                     <div class="add-to-links">
                                                         <a href="#" data-bs-toggle="tooltip" title="Add to Cart"><i class="ion-bag"></i></a>

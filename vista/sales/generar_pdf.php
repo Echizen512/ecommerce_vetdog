@@ -43,7 +43,7 @@ $pdf->Cell(40, 10, 'ID Venta:', 0);
 $pdf->Cell(0, 10, utf8_decode($venta['id_venta']), 0, 1);
 $pdf->Cell(40, 10, 'Fecha:', 0);
 $pdf->Cell(0, 10, utf8_decode(date("d-m-Y", strtotime($venta['fecha']))), 0, 1);
-$pdf->Cell(40, 10, 'N° de Factura:', 0);
+$pdf->Cell(40, 10, 'Numero de Factura:', 0);
 $pdf->Cell(0, 10, utf8_decode($venta['numfact']), 0, 1);
 $pdf->Cell(40, 10, 'Estado:', 0);
 $pdf->Cell(0, 10, utf8_decode($venta['estado']), 0, 1);
@@ -59,7 +59,7 @@ $pdf->Cell(40, 10, 'Tipo de Pago:', 0);
 $pdf->Cell(0, 10, utf8_decode($venta['tipopa']), 0, 1);
 $pdf->Cell(40, 10, 'Comprobante:', 0);
 $pdf->Cell(0, 10, utf8_decode($venta['tipoc']), 0, 1);
-$pdf->Cell(40, 10, 'Número de Tarjeta:', 0);
+$pdf->Cell(40, 10, 'Numero de Tarjeta:', 0);
 $pdf->Cell(0, 10, utf8_decode($venta['numtarj']), 0, 1);
 $pdf->Cell(40, 10, 'Nombre en Tarjeta:', 0);
 $pdf->Cell(0, 10, utf8_decode($venta['nomtarj']), 0, 1);
@@ -73,7 +73,6 @@ $pdf->Ln(20);
 $pdf->SetY(-40);
 $pdf->SetFont('Arial', 'I', 10);
 $pdf->Cell(0, 10, 'Gracias por su compra. Esperamos volver a verle pronto.', 0, 1, 'C');
-$pdf->Cell(0, 10, 'Veterinaria Vetdog - www.vetdog.com', 0, 1, 'C');
 
 $pdf->Output('D', 'Factura_' . $venta['numfact'] . '.pdf');
 ?>

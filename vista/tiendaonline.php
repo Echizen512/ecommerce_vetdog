@@ -383,7 +383,7 @@
                                 <div class="feature-product-item">
                                     <div class="product-thumb">
                                         <a href="#">
-                                            <img src="../assets/img/product/<?php echo $row['foto']; ?>" alt="">
+                                            <img src="../../vetdog/assets/img/subidas/<?php echo $row['foto']; ?>" alt="">
                                         </a>
                                         <div class="add-to-links">
                                             <a href="account/login-register" data-bs-toggle="tooltip" title="Añadir al carrito"><i class="ion-bag"></i></a>
@@ -454,7 +454,7 @@
                 ?>
                 <div class="feature-product-item">
                     <div class="product-thumb">
-                        <a href="#"><img src="../assets/img/product/<?php echo $row['foto']; ?>" alt=""></a>
+                        <a href="#"><img src="../../vetdog/assets/img/subidas/<?php echo $row['foto']; ?>" alt=""></a>
                         <div class="add-to-links">
                             <a href="account/login-register" data-bs-toggle="tooltip" title="Añadir al carrito"><i class="ion-bag"></i></a>
                             <a href="details/details?id=<?php echo $row['id_prod']; ?>"><span data-bs-toggle="tooltip" title="Vista rápida"><i class="ion-ios-eye-outline"></i></span></a>
