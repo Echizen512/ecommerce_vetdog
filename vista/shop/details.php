@@ -1249,12 +1249,12 @@ include 'carrito.php';
                                     </div>
                                     <div class="support-info">
                                         <h6>Llámenos al número gratuito</h6>
-                                        <p>(+51)992998222 or (+51)992998222</p>
+                                        <p>0412-4773077</p>
                                     </div>
                                 </div>
                                 <div class="footer-contact-info">
                                     <h6>Datos de contacto:</h6>
-                                    <p>169-C, Technohud, Piura, PERÚ</p>
+                                    <p>Urbanización Las Mercedes Sector 4 calle 2 casa N 6 La Victoria Estado Aragua.</p>
                                 </div>
                                 <div class="footer-contact-info footer-email">
                                     <h6>Datos de contacto:</h6>

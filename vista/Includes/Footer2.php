@@ -1,6 +1,5 @@
 <footer class="footer-wrapper">
 
-<!-- newsletter area start -->
 <div class="newsletter-area theme-color-2 pt-36 pb-36">
     <div class="container">
         <div class="row align-items-center">
@@ -16,13 +15,12 @@
                         <input type="email" class="news-field" id="mc-email" autocomplete="off" placeholder="Enter your email address">
                         <button class="news-btn" id="mc-submit">subscribe</button>
                     </form>
-                    <!-- mailchimp-alerts Start -->
                     <div class="mailchimp-alerts">
-                        <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
-                        <div class="mailchimp-success"></div><!-- mailchimp-success end -->
-                        <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                        <div class="mailchimp-submitting"></div>
+                        <div class="mailchimp-success"></div>
+                        <div class="mailchimp-error"></div>
                     </div>
-                    <!-- mailchimp-alerts end -->
+
                 </div>
             </div>
             <div class="col-lg-3">
@@ -35,13 +33,10 @@
         </div>
     </div>
 </div>
-<!-- newsletter area end -->
 
-<!-- footer main widget area -->
 <div class="footer-widget-area bg-gray">
     <div class="container">
         <div class="row">
-            <!-- footer widget item start -->
             <div class="col-lg-6 col-md-6">
                 <div class="fotter-widget-item">
                     <div class="footer-widget-title">
@@ -58,12 +53,12 @@
                             </div>
                             <div class="support-info">
                                 <h6>Llámenos al número gratuito</h6>
-                                <p>(+51)992998222 or (+51)992998222</p>
+                                <p>0412-4773077</p>
                             </div>
                         </div>
                         <div class="footer-contact-info">
                             <h6>Datos de contacto:</h6>
-                            <p>169-C, Technohud, Piura, PERÚ</p>
+                            <p>Urbanización Las Mercedes Sector 4 calle 2 casa N 6 La Victoria Estado Aragua.</p>
                         </div>
                         <div class="footer-contact-info footer-email">
                             <h6>Datos de contacto:</h6>
@@ -72,9 +67,7 @@
                     </div>
                 </div>
             </div>
-            <!-- footer widget item end -->
 
-            <!-- footer widget item start -->
             <div class="col-lg-3 col-md-3">
                 <div class="fotter-widget-item">
                     <div class="footer-widget-title">
@@ -84,7 +77,6 @@
                         <div class="usefull-links">
                             <ul>
                                 <li><a href="#">Ventajas de vetdog</a></li>
-                              
                                 <li><a href="#">Opiniones sobre vetdog</a></li>
                                 <li><a href="#">Preguntas frecuentes</a></li>
                                 <li><a href="#">Vende en nuestro Markeplace</a></li>
@@ -95,9 +87,7 @@
                     </div>
                 </div>
             </div>
-            <!-- footer widget item end -->
 
-            <!-- footer widget item start -->
             <div class="col-lg-3 col-md-3">
                 <div class="fotter-widget-item">
                     <div class="footer-widget-title">
@@ -115,19 +105,15 @@
                     </div>
                 </div>
             </div>
-            <!-- footer widget item end -->
         </div>
     </div>
 </div>
-<!-- footer main widget end -->
 
-<!-- footer middle area start -->
 <div class="footer-middle-area bg-gray">
     <div class="container">
         <div class="row">
             <div class="col-xl-9 col-lg-12 m-auto">
                 <div class="footer-banner-inner">
-                    <!-- start single item -->
                     <div class="footer-banner-item-inner">
                         <div class="footer-banner-item">
                             <div class="f-banner-icon">
@@ -136,9 +122,7 @@
                             <p class="f-banner-text">Más de 500.000 productos</p>
                         </div>
                     </div>
-                    <!-- end single item -->
 
-                    <!-- start single item -->
                     <div class="footer-banner-item-inner">
                         <div class="footer-banner-item">
                             <div class="f-banner-icon">
@@ -147,9 +131,7 @@
                             <p class="f-banner-text">Mejores Precios</p>
                         </div>
                     </div>
-                    <!-- end single item -->
 
-                    <!-- start single item -->
                     <div class="footer-banner-item-inner">
                         <div class="footer-banner-item">
                             <div class="f-banner-icon">
@@ -158,9 +140,7 @@
                             <p class="f-banner-text">Servicio de atención al cliente profesional</p>
                         </div>
                     </div>
-                    <!-- end single item -->
 
-                    <!-- start single item -->
                     <div class="footer-banner-item-inner">
                         <div class="footer-banner-item">
                             <div class="f-banner-icon">
@@ -169,7 +149,6 @@
                             <p class="f-banner-text">Envío gratis o de bajo costo</p>
                         </div>
                     </div>
-                    <!-- end single item -->
                 </div>
             </div>
             
@@ -178,14 +157,10 @@
         </div>
     </div>
 </div>
-<!-- footer middle area end -->
 
-<!-- footer bottom area start -->
 <div class="footer-bottom-area bg-white">
     <div class="copyright-text">
-        <p>&copy; 2021 <b>Vetdog</p>
+        <p>&copy; 2024 <b>Vetdog</p>
     </div>
 </div>
-<!-- footer bottom area end -->
-
 </footer>

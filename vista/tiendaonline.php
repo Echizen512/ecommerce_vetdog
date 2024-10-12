@@ -326,11 +326,11 @@
                                     <div class="product-feature-content">
                                         <div class="product-feature-content-inner">
                                             <div class="price-box">
-                                                <span class="price-regular">S/<?php echo $row['precV']; ?></span>
+                                                <span class="price-regular">$/<?php echo $row['precV']; ?></span>
                                             </div>
                                             <div class="product-badge">
                                                 <div class="product-label new">
-                                                    <span>new</span>
+                                                    <span>Nuevo</span>
                                                 </div>
                                                 <div class="product-label discount">
                                                     <span>-5%</span>
@@ -393,11 +393,11 @@
                                     <div class="product-feature-content">
                                         <div class="product-feature-content-inner">
                                             <div class="price-box">
-                                                <span class="price-regular">S/<?php echo $row['precV']; ?></span>
+                                                <span class="price-regular">$/<?php echo $row['precV']; ?></span>
                                             </div>
                                             <div class="product-badge">
                                                 <div class="product-label new">
-                                                    <span>new</span>
+                                                    <span>Nuevo</span>
                                                 </div>
                                                 <div class="product-label discount">
                                                     <span>-10%</span>
@@ -463,10 +463,10 @@
                     <div class="product-feature-content">
                         <div class="product-feature-content-inner">
                             <div class="price-box">
-                                <span class="price-regular">S/<?php echo $row['precV']; ?></span>
+                                <span class="price-regular">$/<?php echo $row['precV']; ?></span>
                             </div>
                             <div class="product-badge">
-                                <div class="product-label new"><span>new</span></div>
+                                <div class="product-label new"><span>Nuevo</span></div>
                                 <div class="product-label discount"><span>-5%</span></div>
                             </div>
                             <div class="ratings">
@@ -546,13 +546,13 @@
                                     ?>
                                     <div class="product-item">
                                         <div class="product-thumb">
-                                            <a href="product-details.html"><img src="../assets/img/product/<?php echo $row['foto']; ?>" alt=""></a>
+                                            <a href="product-details.html"><img src="../../vetdog/assets/img/subidas/<?php echo $row['foto']; ?>" alt="" style="height: 250px;"></a>
                                             <div class="add-to-links">
                                                 <a href="account/login-register" data-bs-toggle="tooltip" title="Add to Cart"><i class="ion-bag"></i></a>
                                                 <a href="details/details?id=<?php echo $row['id_prod']; ?>"><span data-bs-toggle="tooltip" title="Quick View"><i class="ion-ios-eye-outline"></i></span></a>
                                             </div>
                                             <div class="product-badge product-badge__2">
-                                                <div class="product-label new"><span>new</span></div>
+                                                <div class="product-label new"><span>Nuevo</span></div>
                                             </div>
                                         </div>
                                         <div class="product-content">
@@ -567,7 +567,7 @@
                                                 <span><i class="ion-android-star"></i></span>
                                             </div>
                                             <div class="price-box">
-                                                <span class="price-regular">S/<?php echo $row['precV']; ?></span>
+                                                <span class="price-regular">$/<?php echo $row['precV']; ?></span>
                                             </div>
                                         </div>
                                     </div>
