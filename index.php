@@ -1,5 +1,3 @@
-<?php 
-//redireccionar a la vista de login
-
+<?php
 header('location: vista/tiendaonline');
- ?> 
+?>
