@@ -4,24 +4,31 @@ if (!isset($_SESSION['cargo']) || $_SESSION['cargo'] != 2) {
     header('location: ../tiendaonline');
     exit;
 }
+
 $id_due = $_SESSION['id_due'];
 $conn = new mysqli('localhost', 'root', '', 'vetdog'); // Cambia los valores según tu configuración
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
-$query = "SELECT id_venta, fecha, numfact, estado, total FROM venta WHERE id_due = ?";
+
+// Consulta para obtener las solicitudes de adopción
+$query = "SELECT a.nombre, s.estado FROM animales a 
+          JOIN solicitudes s ON a.id_animal = s.id_animal 
+          WHERE s.id_due = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $id_due);
 $stmt->execute();
 $result = $stmt->get_result();
-$compras = [];
+$solicitudes = [];
+
 while ($row = $result->fetch_assoc()) {
-    $row['fecha'] = date("d-m-Y", strtotime($row['fecha']));
-    $compras[] = $row;
+    $solicitudes[] = $row;
 }
+
 $stmt->close();
 $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,10 +37,9 @@ $conn->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="meta description">
-    <title>Vetdog - Tienda de productos para tu mascota</title>
+    <title>Vetdog - Solicitudes de Adopción</title>
     <link rel="shortcut icon" href="../../assets/img/ico.png" type="image/x-icon" />
-    <link
-        href="../../../fonts.googleapis.com/css467e.css?family=Muli:300,400,400i,600,700,800%7CWork+Sans:300,400,500,600,700,800"
+    <link href="../../../fonts.googleapis.com/css467e.css?family=Muli:300,400,400i,600,700,800%7CWork+Sans:300,400,500,600,700,800"
         rel="stylesheet">
     <link href="../../assets/css/vendor.css" rel="stylesheet">
     <link href="../../assets/css/style.css" rel="stylesheet">
@@ -47,36 +53,33 @@ $conn->close();
 <body>
     <?php include '../Includes/Header_Shop.php'; ?>
     <main class="container mt-5">
-        <h2 class="text-center mb-4"><i class="fas fa-shopping-cart text-primary"></i> Mis Compras</h2>
+        <h2 class="text-center mb-4"><i class="fas fa-paw text-primary"></i> Mis Solicitudes de Adopción</h2>
         <div class="card">
             <div class="card-header bg-primary text-white">
-                <h5 class="m-0 text-white"><i class="fas fa-receipt"></i> Detalles de Compras</h5>
+                <h5 class="m-0 text-white"><i class="fas fa-receipt"></i> Detalles de Solicitudes</h5>
             </div>
             <div class="card-body">
-                <table id="tabla-compras" class="table table-bordered">
+                <table id="tabla-solicitudes" class="table table-bordered">
                     <thead class="table table-primary">
                         <tr>
-                            <th class="text-center">ID Venta</th>
-                            <th class="text-center">Fecha</th>
-                            <th class="text-center">Número de Factura</th>
+                            <th class="text-center">Nombre del Animal</th>
                             <th class="text-center">Estado</th>
-                            <th class="text-center">Total <i class="fas fa-money-bill-wave text-success"></i></th>
-                            <th class="text-center">Factura <i class="fas fa-file-invoice-dollar"></i></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($compras as $compra): ?>
+                        <?php foreach ($solicitudes as $solicitud): ?>
                             <tr>
-                                <td class="text-center"><?php echo $compra['id_venta']; ?></td>
-                                <td class="text-center"><?php echo $compra['fecha']; ?></td>
-                                <td class="text-center"><?php echo $compra['numfact']; ?></td>
-                                <td class="text-center"><?php echo $compra['estado']; ?></td>
-                                <td class="text-center"><?php echo $compra['total'] . ' $'; ?></td>
-                                <td class="text-center">
-                                    <a href="generar_pdf.php?id_venta=<?php echo $compra['id_venta']; ?>"
-                                        class="btn btn-info" target="_blank">
-                                        <i class="fas fa-print"></i> Imprimir
-                                    </a>
+                                <td class="text-center"><?php echo htmlspecialchars($solicitud['nombre']); ?></td>
+                                <td class="text-center" style="color: <?php 
+                                    if ($solicitud['estado'] == 'rechazada') {
+                                        echo 'red'; 
+                                    } elseif ($solicitud['estado'] == 'pendiente') {
+                                        echo 'blue'; 
+                                    } elseif ($solicitud['estado'] == 'aceptada') {
+                                        echo 'green'; 
+                                    }
+                                ?>;">
+                                    <?php echo htmlspecialchars($solicitud['estado']); ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -89,7 +92,7 @@ $conn->close();
     <?php include '../Includes/Footer.php'; ?>
     <script>
         $(document).ready(function () {
-            $('#tabla-compras').DataTable({
+            $('#tabla-solicitudes').DataTable({
                 language: {
                     "sEmptyTable": "No hay datos disponibles en la tabla",
                     "sInfo": "Mostrando _START_ a _END_ de _TOTAL_ entradas",

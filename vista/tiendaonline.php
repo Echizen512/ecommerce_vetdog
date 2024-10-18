@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <link href="../assets/css/vendor.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
     <?php include './Includes/Header2.php'; ?>
     <main>
@@ -149,7 +151,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php
+                                            <?php
                                         }
                                     } catch (PDOException $e) {
                                         echo "Hubo un problema en la conexión: " . $e->getMessage();
@@ -220,7 +222,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php
+                                            <?php
                                         }
                                     } catch (PDOException $e) {
                                         echo "Hubo un problema en la conexión: " . $e->getMessage();
@@ -290,7 +292,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php
+                                            <?php
                                         }
                                     } catch (PDOException $e) {
                                         echo "Hubo un problema en la conexión: " . $e->getMessage();
@@ -319,6 +321,199 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-single-item">
+                            <div class="feature-product-title">
+                                <h3>Servicios</h3>
+                            </div>
+                            <div class="ht-slick-slider-wrap">
+                                <div class="ht-slick-slider slick-row-15"
+                                    data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "prevArrow": ".prev-feat", "nextArrow": ".next-feat", "responsive":[{"breakpoint":768, "settings":{"slidesToShow": 2}}, {"breakpoint":480, "settings":{"slidesToShow": 1}}]}'>
+
+                                    <!-- Servicio 1 -->
+                                    <div class="feature-product-item">
+                                        <div class="product-thumb">
+                                            <a href="#"><img src="../assets/img/services/service1.jpg"
+                                                    alt="Peluquería"></a>
+                                            <div class="add-to-links">
+                                                <a href="#" data-bs-toggle="tooltip" title="Ver Servicio"><i
+                                                        class="ion-ios-eye-outline"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-feature-content">
+                                            <div class="product-feature-content-inner">
+                                                <div class="product-name">
+                                                    <h5><a href="#">Peluquería para Mascotas</a></h5>
+                                                </div>
+                                                <div class="price-box">
+                                                    <span class="price-regular">Desde $20</span>
+                                                </div>
+                                                <div class="ratings">
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star-outline"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Servicio 2 -->
+                                    <div class="feature-product-item">
+                                        <div class="product-thumb">
+                                            <a href="#"><img src="../assets/img/services/service2.jpg"
+                                                    alt="Guardería"></a>
+                                            <div class="add-to-links">
+                                                <a href="#" data-bs-toggle="tooltip" title="Ver Servicio"><i
+                                                        class="ion-ios-eye-outline"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-feature-content">
+                                            <div class="product-feature-content-inner">
+                                                <div class="product-name">
+                                                    <h5><a href="#">Guardería para Mascotas</a></h5>
+                                                </div>
+                                                <div class="price-box">
+                                                    <span class="price-regular">Desde $15</span>
+                                                </div>
+                                                <div class="ratings">
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star"></i></span>
+                                                    <span><i class="ion-android-star-outline"></i></span>
+                                                    <span><i class="ion-android-star-outline"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ht-slick-nav">
+                                    <button class="prev-feat"><i class="ion-ios-arrow-left"></i></button>
+                                    <button class="next-feat right"><i class="ion-ios-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-single-item">
+                            <div class="feature-product-title">
+                                <h3>Información</h3>
+                            </div>
+                            <div class="ht-slick-slider-wrap">
+                                <div class="ht-slick-slider slick-row-15"
+                                    data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "prevArrow": ".prev-info", "nextArrow": ".next-info", "responsive":[{"breakpoint":768, "settings":{"slidesToShow": 2}}, {"breakpoint":480, "settings":{"slidesToShow": 1}}]}'>
+
+                                    <!-- Información 1 -->
+                                    <div class="feature-product-item">
+                                        <div class="product-thumb">
+                                            <a href="#"><img src="../assets/img/info/about.jpg"
+                                                    alt="Sobre Nosotros" style="height: 200px; width: 100%;"></a>
+                                            <div class="add-to-links">
+                                                <a href="#" data-bs-toggle="tooltip" title="Ver Información"><i
+                                                        class="ion-ios-eye-outline"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-feature-content">
+                                            <div class="product-feature-content-inner">
+                                                <div class="product-name">
+                                                    <h5><a href="#">Sobre Nosotros</a></h5>
+                                                </div>
+                                                <p>Conoce más acerca de nuestra tienda y los valores que nos guían.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Información 2 -->
+                                    <div class="feature-product-item">
+                                        <div class="product-thumb">
+                                            <a href="#"><img src="../assets/img/info/contact.jpg" style="height: 200px; width: 100%;" alt="Contáctanos"></a>
+                                            <div class="add-to-links">
+                                                <a href="#" data-bs-toggle="tooltip" title="Ver Información"><i
+                                                        class="ion-ios-eye-outline"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-feature-content">
+                                            <div class="product-feature-content-inner">
+                                                <div class="product-name">
+                                                    <h5><a href="#">Contáctanos</a></h5>
+                                                </div>
+                                                <p>¿Tienes alguna duda? Ponte en contacto con nosotros aquí.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ht-slick-nav">
+                                    <button class="prev-info"><i class="ion-ios-arrow-left"></i></button>
+                                    <button class="next-info right"><i class="ion-ios-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="feature-single-item">
+                            <div class="feature-product-title">
+                                <h3>Promociones</h3>
+                            </div>
+                            <div class="ht-slick-slider-wrap">
+                                <div class="ht-slick-slider slick-row-15"
+                                    data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "prevArrow": ".prev-promo", "nextArrow": ".next-promo", "responsive":[{"breakpoint":768, "settings":{"slidesToShow": 2}}, {"breakpoint":480, "settings":{"slidesToShow": 1}}]}'>
+
+                                    <!-- Promoción 1 -->
+                                    <div class="feature-product-item">
+                                        <div class="product-thumb">
+                                            <a href="#"><img src="../assets/img/services/service1.jpg"
+                                                    alt="Promo 1"></a>
+                                            <div class="add-to-links">
+                                                <a href="#" data-bs-toggle="tooltip" title="Ver Promoción"><i
+                                                        class="ion-ios-eye-outline"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-feature-content">
+                                            <div class="product-feature-content-inner">
+                                                <div class="product-name">
+                                                    <h5><a href="#">20% de Descuento en Peluquería</a></h5>
+                                                </div>
+                                                <div class="price-box">
+                                                    <span class="price-regular">Solo $16</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Promoción 2 -->
+                                    <div class="feature-product-item">
+                                        <div class="product-thumb">
+                                            <a href="#"><img src="../assets/img/services/service2.jpg"
+                                                    alt="Promo 2"></a>
+                                            <div class="add-to-links">
+                                                <a href="#" data-bs-toggle="tooltip" title="Ver Promoción"><i
+                                                        class="ion-ios-eye-outline"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-feature-content">
+                                            <div class="product-feature-content-inner">
+                                                <div class="product-name">
+                                                    <h5><a href="#">Descuento en Guardería por Tiempo Limitado</a></h5>
+                                                </div>
+                                                <div class="price-box">
+                                                    <span class="price-regular">Solo $12</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ht-slick-nav">
+                                    <button class="prev-promo"><i class="ion-ios-arrow-left"></i></button>
+                                    <button class="next-promo right"><i class="ion-ios-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="categories-features-area pt-40 pb-40">
                         <div class="container">
                             <div class="row">
@@ -358,12 +553,12 @@
                                                                                 alt="" style="height: 250px;"></a>
                                                                         <div class="add-to-links">
                                                                             <a href="account/login-register"
-                                                                                data-bs-toggle="tooltip" title="Añadir al Carro"><i
+                                                                                data-bs-toggle="tooltip"
+                                                                                title="Añadir al Carro"><i
                                                                                     class="ion-bag"></i></a>
                                                                             <a
                                                                                 href="details/details?id=<?php echo $row['id_prod']; ?>"><span
-                                                                                    data-bs-toggle="tooltip"
-                                                                                    title="Ver"><i
+                                                                                    data-bs-toggle="tooltip" title="Ver"><i
                                                                                         class="ion-ios-eye-outline"></i></span></a>
                                                                         </div>
                                                                         <div class="product-badge product-badge__2">
@@ -389,7 +584,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            <?php
+                                                                <?php
                                                             }
                                                         } catch (PDOException $e) {
                                                             echo "Hubo un problema en la conexión: " . $e->getMessage();
@@ -442,7 +637,7 @@
                                                                 <h5><a href="#"><?php echo $row['nomcate']; ?></a></h5>
                                                             </div>
                                                         </div>
-                                                    <?php
+                                                        <?php
                                                     }
                                                 } catch (PDOException $e) {
                                                     echo "Hubo un problema en la conexión: " . $e->getMessage();
@@ -456,6 +651,119 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="categories-features-area pt-40 pb-40">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="categories-feature-title-inner">
+                                        <div class="section-title">
+                                            <h2>Animales en Adopción</h2>
+                                        </div>
+                                    </div>
+                                    <div class="categories-features-wrapper">
+                                        <div class="ht-slick-slider-wrap">
+                                            <div class="ht-slick-slider slick-row-15"
+                                                data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "speed": 1000, "arrows": true, "prevArrow": ".prev-adoption", "nextArrow": ".next-adoption", "responsive":[{"breakpoint":992, "settings":{"slidesToShow": 2}}, {"breakpoint":480, "settings":{"slidesToShow": 1}}]}'>
+                                                <?php
+                                                include_once('config/dbconect.php');
+                                                $database = new Connection();
+                                                $db = $database->open();
+                                                try {
+                                                    $sql = 'SELECT id_animal, nombre, edad, tipo, condicion, imagen, estado FROM animales WHERE estado = "disponible"';
+                                                    foreach ($db->query($sql) as $row) {
+                                                        ?>
+                                                        <div class="product-item">
+                                                            <div class="product-thumb">
+                                                                <a href="#"><img style='height: 250px;'
+                                                                        src="../../vetdog/assets/img/adopcion/<?php echo $row['imagen']; ?>"
+                                                                        alt="" class="img-fluid"></a>
+                                                                <div class="add-to-links">
+                                                                    <button class="btn btn-primary"
+                                                                        onclick="solicitarAdopcion(<?php echo $row['id_animal']; ?>)"
+                                                                        data-bs-toggle="tooltip"
+                                                                        title="Solicitar adopción">Solicitar Adopción</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-content">
+                                                                <div class="product-name">
+                                                                    <h5><a href="#"><?php echo $row['nombre']; ?></a></h5>
+                                                                </div>
+                                                                <p>Edad: <?php echo $row['edad']; ?> años</p>
+                                                                <p>Tipo: <?php echo $row['tipo']; ?></p>
+                                                                <p>Condición: <?php echo $row['condicion']; ?></p>
+                                                            </div>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                } catch (PDOException $e) {
+                                                    echo "Hubo un problema en la conexión: " . $e->getMessage();
+                                                }
+                                                $database->close();
+                                                ?>
+                                            </div>
+                                            <div class="ht-slick-nav">
+                                                <button class="prev-adoption"><i
+                                                        class="ion-ios-arrow-left"></i></button>
+                                                <button class="next-adoption right"><i
+                                                        class="ion-ios-arrow-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        function solicitarAdopcion() {
+                            window.location.href = 'account/login-register';
+                        }
+                    </script>
+
+
+
+
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <script>
+                        function solicitarAdopcion(id_animal) {
+                            Swal.fire({
+                                title: '¿Estás seguro de que deseas solicitar la adopción?',
+                                showCancelButton: true,
+                                confirmButtonText: 'Sí, solicitar',
+                                cancelButtonText: 'Cancelar'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    enviarSolicitud(id_animal);
+                                }
+                            });
+                        }
+
+                        function enviarSolicitud(id_animal) {
+                            const id_due = <?php echo json_encode($id_due); ?>;
+
+                            // Envío de la solicitud a la base de datos
+                            fetch('solicitud_adopcion.php', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ id_due, id_animal })
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.success) {
+                                        Swal.fire('Éxito', 'Solicitud de adopción enviada con éxito.', 'success');
+                                    } else {
+                                        Swal.fire('Error', 'No se pudo enviar la solicitud. Inténtalo de nuevo.', 'error');
+                                    }
+                                })
+                                .catch(error => {
+                                    Swal.fire('Error', 'Error de conexión. Inténtalo de nuevo.', 'error');
+                                });
+                        }
+                    </script>
     </main>
     <?php include './Includes/Footer2.php'; ?>
     <div class="scroll-top not-visible">
@@ -464,4 +772,5 @@
     <script src="../assets/js/vendor.js"></script>
     <script src="../assets/js/active.js"></script>
 </body>
+
 </html>

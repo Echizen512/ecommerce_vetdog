@@ -16,6 +16,7 @@
                                         <i class="fa fa-angle-down"></i>
                                         <ul class="dropdown-list account-list">
                                             <li><a href="./sales.php">Compras</a></li>
+                                            <li><a href="./requets.php">Solicitudes</a></li>
                                             <li><a href="salir">cerrar sesion</li>
                                         </ul>
                                     </li>
