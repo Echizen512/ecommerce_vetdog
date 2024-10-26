@@ -77,246 +77,38 @@
                 </div>
             </div>
             <div class="main-menu-area theme-color-2 sticky">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3">
-                            <div class="category-toggle-wrap">
-                                <div class="category-toggle">
-                                    <i class="ion-android-menu"></i>
-                                    Categorías
-                                    <span><i class="ion-android-arrow-dropdown"></i></span>
-                                </div>
-                                <nav class="category-menu">
-                                    <ul class="categories-list">
-                                        <?php
-                                        include_once('../config/dbconect.php');
-                                        $database = new Connection();
-                                        $db = $database->open();
-                                        try {
-                                            $sql = 'SELECT * FROM category';
-                                            foreach ($db->query($sql) as $row) {
-                                                ?>
-                                                <li><a href="#"><?php echo $row['nomcate']; ?></a></li>
-                                            <?php
-                                            }
-                                        } catch (PDOException $e) {
-                                            echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                        }
-                                        $database->close();
-                                        ?>
-                                    </ul>
-                                </nav>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3">
+                        <div class="category-toggle-wrap">
+                            <div class="category-toggle">
+                                <i class="ion-android-menu"></i>
+                                Inicio
+                                <span>
+                                    <i class="ion-android-arrow-dropdown"></i>
+                                </span>
                             </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="main-menu home-main">
-                                <nav class="desktop-menu">
-                                    <ul>
-                                        <li>
-                                            <a href="#">perros <i class="fa fa-angle-down"></i></a>
-                                            <ul class="megamenu dropdown">
-                                                <li class="mega-title"><a href="#">Alimentos perros</a>
-                                                    <ul>
-                                                        <?php
-                                                        include_once('../config/dbconect.php');
-                                                        $database = new Connection();
-                                                        $db = $database->open();
-                                                        try {
-                                                            $sql = "SELECT products.id_prod, products.codigo, category.id_cate, category.nomcate, products.foto, products.nompro, products.peso, supplier.id_prove, supplier.nomprove, supplier.ruc, supplier.direcc, supplier.tele, supplier.pais, supplier.corre,products.descp, products.preciC, products.precV, products.stock, products.estado, products.fere FROM products INNER JOIN category ON products.id_cate =category.id_cate INNER JOIN supplier ON products.id_prove = supplier.id_prove  WHERE category.id_cate =  '6'";
-                                                            foreach ($db->query($sql) as $row) {
-                                                                ?>
-                                                                <li>
-                                                                    <a href="#"><?php echo $row['nomcate']; ?></a>
-                                                                </li>
-                                                            <?php
-                                                            }
-                                                        } catch (PDOException $e) {
-                                                            echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                                        }
-                                                        $database->close();
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-title"><a href="#">Cuidado e higiene</a>
-                                                    <ul>
-                                                        <?php
-                                                        include_once('../config/dbconect.php');
-                                                        $database = new Connection();
-                                                        $db = $database->open();
-                                                        try {
-                                                            $sql = "SELECT products.id_prod, products.codigo, category.id_cate, category.nomcate, products.foto, products.nompro, products.peso, supplier.id_prove, supplier.nomprove, supplier.ruc, supplier.direcc, supplier.tele, supplier.pais, supplier.corre,products.descp, products.preciC, products.precV, products.stock, products.estado, products.fere FROM products INNER JOIN category ON products.id_cate =category.id_cate INNER JOIN supplier ON products.id_prove = supplier.id_prove  WHERE category.id_cate =  '7'";
-                                                            foreach ($db->query($sql) as $row) {
-                                                                ?>
-                                                                <li>
-                                                                    <a href="#"><?php echo $row['nomcate']; ?></a>
-                                                                </li>
-                                                            <?php
-                                                            }
-                                                        } catch (PDOException $e) {
-                                                            echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                                        }
-                                                        $database->close();
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-title"><a href="#">Farmacia</a>
-                                                    <ul>
-                                                        <?php
-                                                        include_once('../config/dbconect.php');
-                                                        $database = new Connection();
-                                                        $db = $database->open();
-                                                        try {
-                                                            $sql = "SELECT products.id_prod, products.codigo, category.id_cate, category.nomcate, products.foto, products.nompro, products.peso, supplier.id_prove, supplier.nomprove, supplier.ruc, supplier.direcc, supplier.tele, supplier.pais, supplier.corre,products.descp, products.preciC, products.precV, products.stock, products.estado, products.fere FROM products INNER JOIN category ON products.id_cate =category.id_cate INNER JOIN supplier ON products.id_prove = supplier.id_prove  WHERE category.id_cate =  '3'";
-                                                            foreach ($db->query($sql) as $row) {
-                                                                ?>
-                                                                <li>
-                                                                    <a href="#"><?php echo $row['nomcate']; ?></a>
-                                                                </li>
-                                                            <?php
-                                                            }
-                                                        } catch (PDOException $e) {
-                                                            echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                                        }
-                                                        $database->close();
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-title"><a href="#">Accesorios</a>
-                                                    <ul>
-                                                        <?php
-                                                        include_once('../config/dbconect.php');
-                                                        $database = new Connection();
-                                                        $db = $database->open();
-                                                        try {
-                                                            $sql = "SELECT products.id_prod, products.codigo, category.id_cate, category.nomcate, products.foto, products.nompro, products.peso, supplier.id_prove, supplier.nomprove, supplier.ruc, supplier.direcc, supplier.tele, supplier.pais, supplier.corre,products.descp, products.preciC, products.precV, products.stock, products.estado, products.fere FROM products INNER JOIN category ON products.id_cate =category.id_cate INNER JOIN supplier ON products.id_prove = supplier.id_prove  WHERE category.id_cate =  '2'";
-                                                            foreach ($db->query($sql) as $row) {
-                                                                ?>
-                                                                <li>
-                                                                    <a href="#"><?php echo $row['nomcate']; ?></a>
-                                                                </li>
-                                                            <?php
-                                                            }
-                                                        } catch (PDOException $e) {
-                                                            echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                                        }
-                                                        $database->close();
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">gatos <i class="fa fa-angle-down"></i></a>
-                                            <ul class="megamenu dropdown">
-                                                <li class="mega-title"><a href="#">Alimentos gatos</a>
-                                                    <ul>
-                                                        <?php
-                                                        include_once('../config/dbconect.php');
-                                                        $database = new Connection();
-                                                        $db = $database->open();
-                                                        try {
-                                                            $sql = "SELECT products.id_prod, products.codigo, category.id_cate, category.nomcate, products.foto, products.nompro, products.peso, supplier.id_prove, supplier.nomprove, supplier.ruc, supplier.direcc, supplier.tele, supplier.pais, supplier.corre,products.descp, products.preciC, products.precV, products.stock, products.estado, products.fere FROM products INNER JOIN category ON products.id_cate =category.id_cate INNER JOIN supplier ON products.id_prove = supplier.id_prove  WHERE category.id_cate =  '6'";
-                                                            foreach ($db->query($sql) as $row) {
-                                                                ?>
-                                                                <li>
-                                                                    <a href="#"><?php echo $row['nomcate']; ?></a>
-                                                                </li>
-                                                            <?php
-                                                            }
-                                                        } catch (PDOException $e) {
-                                                            echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                                        }
-                                                        $database->close();
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-title"><a href="#">Cuidado e higiene</a>
-                                                    <ul>
-                                                        <?php
-                                                        include_once('../config/dbconect.php');
-                                                        $database = new Connection();
-                                                        $db = $database->open();
-                                                        try {
-                                                            $sql = "SELECT products.id_prod, products.codigo, category.id_cate, category.nomcate, products.foto, products.nompro, products.peso, supplier.id_prove, supplier.nomprove, supplier.ruc, supplier.direcc, supplier.tele, supplier.pais, supplier.corre,products.descp, products.preciC, products.precV, products.stock, products.estado, products.fere FROM products INNER JOIN category ON products.id_cate =category.id_cate INNER JOIN supplier ON products.id_prove = supplier.id_prove  WHERE category.id_cate =  '7'";
-                                                            foreach ($db->query($sql) as $row) {
-                                                                ?>
-                                                                <li>
-                                                                    <a href="#"><?php echo $row['nomcate']; ?></a>
-                                                                </li>
-                                                            <?php
-                                                            }
-                                                        } catch (PDOException $e) {
-                                                            echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                                        }
-                                                        $database->close();
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-title"><a href="#">Farmacia</a>
-                                                    <ul>
-                                                        <?php
-                                                        include_once('../config/dbconect.php');
-                                                        $database = new Connection();
-                                                        $db = $database->open();
-                                                        try {
-                                                            $sql = "SELECT products.id_prod, products.codigo, category.id_cate, category.nomcate, products.foto, products.nompro, products.peso, supplier.id_prove, supplier.nomprove, supplier.ruc, supplier.direcc, supplier.tele, supplier.pais, supplier.corre,products.descp, products.preciC, products.precV, products.stock, products.estado, products.fere FROM products INNER JOIN category ON products.id_cate =category.id_cate INNER JOIN supplier ON products.id_prove = supplier.id_prove  WHERE category.id_cate =  '3'";
-                                                            foreach ($db->query($sql) as $row) {
-                                                                ?>
-                                                                <li>
-                                                                    <a href="#"><?php echo $row['nomcate']; ?></a>
-                                                                </li>
-                                                            <?php
-                                                            }
-                                                        } catch (PDOException $e) {
-                                                            echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                                        }
-                                                        $database->close();
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                                <li class="mega-title"><a href="#">Accesorios</a>
-                                                    <ul>
-                                                        <?php
-                                                        include_once('../config/dbconect.php');
-                                                        $database = new Connection();
-                                                        $db = $database->open();
-                                                        try {
-                                                            $sql = "SELECT products.id_prod, products.codigo, category.id_cate, category.nomcate, products.foto, products.nompro, products.peso, supplier.id_prove, supplier.nomprove, supplier.ruc, supplier.direcc, supplier.tele, supplier.pais, supplier.corre,products.descp, products.preciC, products.precV, products.stock, products.estado, products.fere FROM products INNER JOIN category ON products.id_cate =category.id_cate INNER JOIN supplier ON products.id_prove = supplier.id_prove  WHERE category.id_cate =  '2'";
-                                                            foreach ($db->query($sql) as $row) {
-                                                                ?>
-                                                                <li>
-                                                                    <a href="#"><?php echo $row['nomcate']; ?></a>
-                                                                </li>
-                                                            <?php
-                                                            }
-                                                        } catch (PDOException $e) {
-                                                            echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                                        }
-                                                        $database->close();
-                                                        ?>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="contact-top">
-                                <div class="contact-top-icon">
-                                    <img src="../../assets/img/icon/download.png" alt="">
-                                </div>
-                                <div class="contact-top-info">
-                                    <p>Llámanos ahora</p>
-                                    <a href="#">0412-4773077</a>
-                                </div>
-                            </div>
+                            <nav class="category-menu">
+                                <ul class="categories-list">
+                                    <li><a href="./shop.php">Productos</a></li>
+                                    <li><a href="./shop.php">Mascotas</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+
+                    <div class="col-lg-7">
+                        <div class="main-menu home-main">
+                            <nav class="desktop-menu">
+                                <ul>
+
+                                    <li>
+                                        <a href="contact/contact">Contactanos</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
         <div class="mobile-header d-lg-none d-md-block sticky">
             <div class="container">
                 <div class="row align-items-center">

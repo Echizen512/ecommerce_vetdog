@@ -1,37 +1,6 @@
 <!--== Start Footer Area Wrapper ==-->
 <footer class="footer-wrapper">
-    <div class="newsletter-area theme-color-2 pt-36 pb-36">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="newsletter-title">
-                        <h3>suscríbete al boletín</h3>
-                        <p>Regístrese ahora para recibir actualizaciones sobre promociones y cupones.</p>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6">
-                    <div class="newsletter-inner">
-                        <form id="mc-form">
-                            <input type="email" class="news-field" id="mc-email" autocomplete="off"
-                                placeholder="Enter your email address">
-                            <button class="news-btn" id="mc-submit">subscribe</button>
-                        </form>
-                        <div class="mailchimp-alerts">
-                            <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
-                            <div class="mailchimp-success"></div><!-- mailchimp-success end -->
-                            <div class="mailchimp-error"></div><!-- mailchimp-error end -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="footer-social-link">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <div class="footer-widget-area bg-gray">
         <div class="container">

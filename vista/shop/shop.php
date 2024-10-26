@@ -542,7 +542,7 @@ if (!isset($_SESSION['cargo']) == 2) {
                                 <div class="col-12">
                                     <div class="categories-feature-title-inner">
                                         <div class="section-title">
-                                            <h2>perros y gatos</h2>
+                                            <h2>PROUCTOS</h2>
                                         </div>
                                         <div class="feature-tab-menu">
                                             <ul class="nav justify-content-start justify-content-lg-end">
@@ -628,54 +628,7 @@ if (!isset($_SESSION['cargo']) == 2) {
                             </div>
                         </div>
                     </div>
-                    <div class="categories-area pt-40 pb-40">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="section-header-wrap">
-                                        <div class="section-title">
-                                            <h2>nuestras categorias</h2>
-                                        </div>
-                                        <div class="ht-slick-nav slick-append">
-                                            <button class="prev-recom"><i class="ion-ios-arrow-left"></i></button>
-                                            <button class="next-recom right"><i
-                                                    class="ion-ios-arrow-right"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="categories-item-wrapper pt-30">
-                                        <div class="ht-slick-slider-wrap">
-                                            <div class="ht-slick-slider slick-row-15"
-                                                data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "rows": 2, "speed": 1000, "prevArrow": ".prev-recom", "nextArrow": ".next-recom", "responsive":[{"breakpoint":992, "settings":{"slidesToShow": 3}}, {"breakpoint":768, "settings":{"slidesToShow": 2}}, {"breakpoint":480, "settings":{"slidesToShow": 1, "rows": 1}}]}'>
-                                                <?php
-                                                include_once('../config/dbconect.php');
-                                                $database = new Connection();
-                                                $db = $database->open();
-                                                try {
-                                                    $sql = 'SELECT * FROM category';
-                                                    foreach ($db->query($sql) as $row) {
-                                                        ?>
-                                                        <div class="categories-item">
-                                                            <div class="categories-content">
-                                                                <h5><a
-                                                                        href="category?id=<?php echo $row['id_cate']; ?>"><?php echo $row['nomcate']; ?></a>
-                                                                </h5>
-                                                            </div>
-                                                        </div>
-                                                        <!-- END -->
-                                                        <?php
-                                                    }
-                                                } catch (PDOException $e) {
-                                                    echo "Hubo un problema en la conexión: " . $e->getMessage();
-                                                }
-                                                $database->close();
-                                                ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="categories-features-area pt-40 pb-40">
                         <div class="container">
                             <div class="row">
