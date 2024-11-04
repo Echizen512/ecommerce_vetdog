@@ -160,7 +160,7 @@ if (!isset($_SESSION['cargo']) == 2) {
                                 <div class="col-12">
                                     <div class="checkoutaccordion" id="checkOutAccordion">
                                         <div class="card">
-                                            <h3>Informacion del usuario <span data-bs-toggle="collapse"
+                                            <h3>Detalles del Pago <span data-bs-toggle="collapse"
                                                     data-bs-target="#couponaccordion">Click
                                                     Aqui</span></h3>
                                             <div id="couponaccordion" class="collapse"
