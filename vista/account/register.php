@@ -14,7 +14,7 @@ try {
 
 if (isset($_POST["agregar"])) {
     if (empty($_POST['dni_due']) || empty($_POST['nom_due']) || empty($_POST['ape_due']) || empty($_POST['movil']) || empty($_POST['correo']) || empty($_POST['direc']) || empty($_POST['contra'])) {
-        echo '<script>swal("¡Información!", "¡No puede enviar datos vacíos!", "info").then();</script>';
+        echo '<script>alert("¡No puede enviar datos vacíos!");</script>';
         exit;
     } else {
         $dni_due = $_POST['dni_due'];
@@ -33,7 +33,7 @@ if (isset($_POST["agregar"])) {
         $stmt->execute([':dni_due' => $dni_due, ':movil' => $movil, ':correo' => $correo]);
 
         if ($stmt->rowCount() > 0) {
-            echo '<script>swal("¡Error!", "¡Ya existe el usuario a registrar!", "error");</script>';
+            echo '<script>alert("¡Ya existe el usuario a registrar!");</script>';
         } else {
             // Verificar si el usuario ya existe en la tabla veterinarians o admins
             $sql = "SELECT id_vet FROM veterinarian WHERE dnivet = :dni_due OR movil = :movil OR correo = :correo";
@@ -41,7 +41,7 @@ if (isset($_POST["agregar"])) {
             $stmt->execute([':dni_due' => $dni_due, ':movil' => $movil, ':correo' => $correo]);
 
             if ($stmt->rowCount() > 0) {
-                echo '<script>swal("¡Error!", "¡Ya existe el usuario a registrar!", "error");</script>';
+                echo '<script>alert("¡Ya existe el usuario a registrar!");</script>';
             } else {
                 // Verificar si el correo ya está en uso por un admin
                 $sql = "SELECT id FROM admin WHERE email = :correo";
@@ -49,12 +49,12 @@ if (isset($_POST["agregar"])) {
                 $stmt->execute([':correo' => $correo]);
 
                 if ($stmt->rowCount() > 0) {
-                    echo '<script>swal("¡Error!", "¡Ya existe el usuario a registrar!", "error");</script>';
+                    echo '<script>alert("¡Ya existe el usuario a registrar!");</script>';
                 } else {
                     // Insertar nuevo cliente
                     $now = date('Y-m-d H:i:s');
-                    $sql2 = "INSERT INTO owner (dni_due, nom_due, ape_due, movil, fijo, correo, direc, estado, contra, fere) 
-                            VALUES (:dni_due, :nom_due, :ape_due, :movil, :fijo, :correo, :direc, :estado, :contra, :fere)";
+                    $sql2 = "INSERT INTO owner (dni_due, nom_due, ape_due, movil, fijo, correo, direc, estado, contra, fere, cargo) 
+    VALUES (:dni_due, :nom_due, :ape_due, :movil, :fijo, :correo, :direc, :estado, :contra, :fere, :cargo)";
                     $stmt = $connect->prepare($sql2);
                     $stmt->execute([
                         ':dni_due' => $dni_due,
@@ -66,20 +66,20 @@ if (isset($_POST["agregar"])) {
                         ':direc' => $direc,
                         ':estado' => $estado,
                         ':contra' => $contra,
-                        ':fere' => $now
+                        ':fere' => $now,
+                        ':cargo' => 2  // Establecer el valor de cargo a 2
                     ]);
 
-                    // Mensaje de éxito
-                    echo '<script>swal("¡Registrado!", "Agregado correctamente", "success").then(function() {
-                        window.location = "./../login.php";
-                    });</script>';
+                    // Mensaje de éxito y redirección
+                    echo '<script>
+                        alert("¡Registrado correctamente!");
+                        window.location = "login-register.php";
+                    </script>';
 
                     $tableID = $connect->lastInsertId();
                     $nameTable = "cliente";
                     $rol = "usuario";
                     $action = "Se creó un cliente";
-
-
                 }
             }
         }
@@ -88,7 +88,6 @@ if (isset($_POST["agregar"])) {
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es-ES">
@@ -108,8 +107,6 @@ if (isset($_POST["agregar"])) {
     <script src="./../../assets/js/tailwindcss.js"></script>
     <title>Registrar Clientes Administrador | Beatriz Fagundez</title>
 </head>
-
-
 
 <body style="background-color: #475569">
     <section class="p-8">
@@ -202,7 +199,7 @@ if (isset($_POST["agregar"])) {
                                         <label class="control-label">Dirección<span class="text-danger">*</span></label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="direc" class="form-control"
+                                                <input type="text" name="direc" required class="form-control"
                                                     placeholder="Dirección..." />
                                             </div>
                                         </div>
@@ -218,18 +215,10 @@ if (isset($_POST["agregar"])) {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="container-fluid" style="text-aling: center">
-                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <button class="btn bg-red btn-clear"><i class="material-icons">cancel</i>
-                                            LIMPIAR </button>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                                        <button class="btn bg-green" name="agregar">GUARDAR <i
-                                                class="material-icons">save</i></button>
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" name="agregar" class="btn btn-primary">Registrar
+                                            Cliente</button>
                                     </div>
                                 </div>
                             </form>
@@ -239,7 +228,6 @@ if (isset($_POST["agregar"])) {
             </div>
         </div>
     </section>
-
     <script src="../../assets/plugins/jquery/jquery.min.js"></script>
     <script src="../../assets/plugins/bootstrap/js/bootstrap.js"></script>
     <script src="../../assets/js/admin.js"></script>
