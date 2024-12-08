@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta para obtener las solicitudes de adopción
-$query = "SELECT a.nombre, s.estado FROM animales a 
+$query = "SELECT a.nombre, s.estado, a.id_animal FROM animales a 
           JOIN solicitudes s ON a.id_animal = s.id_animal 
           WHERE s.id_due = ?";
 $stmt = $conn->prepare($query);
@@ -60,26 +60,35 @@ $conn->close();
             </div>
             <div class="card-body">
                 <table id="tabla-solicitudes" class="table table-bordered">
-                    <thead class="table table-primary">
+                    <thead class="table-primary">
                         <tr>
                             <th class="text-center">Nombre del Animal</th>
                             <th class="text-center">Estado</th>
+                            <th class="text-center">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($solicitudes as $solicitud): ?>
                             <tr>
                                 <td class="text-center"><?php echo htmlspecialchars($solicitud['nombre']); ?></td>
-                                <td class="text-center" style="color: <?php 
-                                    if ($solicitud['estado'] == 'rechazada') {
-                                        echo 'red'; 
-                                    } elseif ($solicitud['estado'] == 'pendiente') {
-                                        echo 'blue'; 
-                                    } elseif ($solicitud['estado'] == 'aceptada') {
-                                        echo 'green'; 
-                                    }
-                                ?>;">
+                                <td class="text-center" style="color: <?php
+                                if ($solicitud['estado'] == 'rechazada') echo 'red';
+                                elseif ($solicitud['estado'] == 'pendiente') echo 'blue';
+                                elseif ($solicitud['estado'] == 'aceptada') echo 'green';
+                                ?>">
                                     <?php echo htmlspecialchars($solicitud['estado']); ?>
+                                </td>
+                                <td class="text-center">
+                                    <?php if ($solicitud['estado'] == 'aceptada'): ?>
+                                        <a href="certificado.php?id_due=<?php echo $id_due; ?>&id_animal=<?php echo $solicitud['id_animal']; ?>" 
+                                           class="btn btn-success" target="_blank">
+                                            <i class="fas fa-file-pdf"></i> Generar Certificado
+                                        </a>
+                                    <?php else: ?>
+                                        <button class="btn btn-secondary" disabled data-toggle="tooltip" title="La solicitud debe estar aceptada para generar un certificado.">
+                                            <i class="fas fa-file-pdf"></i> Generar Certificado
+                                        </button>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -99,24 +108,22 @@ $conn->close();
                     "sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
                     "sInfoFiltered": "(filtrados de _MAX_ entradas totales)",
                     "sLengthMenu": "Mostrar _MENU_ entradas",
-                    "sLoadingRecords": "Cargando...",
-                    "sProcessing": "Procesando...",
-                    "sSearch": "Buscar: <i class='fas fa-search'></i>",
+                    "sSearch": "Buscar: ",
                     "sZeroRecords": "No se encontraron resultados",
                     "oPaginate": {
                         "sFirst": "Primero",
                         "sLast": "Último",
                         "sNext": "Siguiente",
                         "sPrevious": "Anterior"
-                    },
-                    "oAria": {
-                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
                     }
                 }
             });
+
+            // Inicializar tooltips
+            $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
