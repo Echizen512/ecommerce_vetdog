@@ -43,17 +43,29 @@ class PDF extends FPDF
     // Agregar fuentes personalizadas
     function Header()
     {
+        $this->Ln(10);
+        
+        // Título principal
         $this->SetFont('Arial', 'B', 14);
+        $this->SetTextColor(0); // Negro
+        $this->Cell(0, 12, 'Veterinaria Beatriz Fagundez', 0, 1, 'C'); // Cambié 0 a 1 en el segundo parámetro para crear un salto de línea
+        
+        // Subtítulo
+        $this->SetFont('Arial', 'B', 12);
         $this->SetTextColor(33, 97, 140); // Azul oscuro
         $this->Cell(0, 10, utf8_decode('Certificado Oficial de Adopción - Vetdog'), 0, 1, 'C');
+        
+        // Mensaje
         $this->SetFont('Arial', 'I', 10);
-        $this->SetTextColor(80);
+        $this->SetTextColor(80); // Gris
         $this->Cell(0, 10, utf8_decode('Por un mundo donde todos los animales encuentren un hogar'), 0, 1, 'C');
+        
         $this->Ln(10);
     }
 
     function Footer()
     {
+        $this->Image('./icon2.png', 10, 5, 35, 35);
         $this->SetY(-30);
         $this->SetFont('Arial', '', 9);
         $this->SetTextColor(80);
